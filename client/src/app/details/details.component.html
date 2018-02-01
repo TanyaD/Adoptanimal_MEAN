@@ -1,0 +1,25 @@
+<h3>Details about {{pet.name}}</h3>
+<a [routerLink]="['']" > Home </a>
+<p class="error" *ngIf="fetchError">{{fetchError}}</p>
+<table class="table">
+  <tbody>
+      <tr>
+        <th>Pet type:</th>
+          <td>{{pet.type}}</td>
+      </tr>
+      <tr>
+        <th>Descriprion:</th>
+          <td>{{pet.description}}</td>
+      </tr>
+      <tr>
+        <th>Skills:</th>
+          <td>{{pet.skill1}} {{pet.skill2}} {{pet.skill3}}</td>
+      </tr>
+      <tr>
+        <th>Likes:</th>
+          <td>{{pet.like}}</td>
+      </tr>
+  </tbody>
+  <button class='btn btn-success' type=button (click) ="deletePet(pet._id)">Adopt this pet!</button>
+	<button (click)='addLike(pet)' class="btn btn-primary"> Like this Post </button>
+</table>

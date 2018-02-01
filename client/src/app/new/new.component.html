@@ -1,0 +1,29 @@
+<div class ="new">
+  <h3>Know a pet needing a home?</h3>
+  <form (submit)="onSubmit()">
+      <div class="form-group">
+          <label for= "newP.name">Pet Name</label>
+          <p *ngIf="errorMsg" class="error">{{errorMsg.name.message}}</p>
+          <input type="text" name="newP.name" [(ngModel)]="newP.name" class="form-control">
+          <br>
+          <label for= "newP.type">Type</label>
+          <p *ngIf="errorMsg" class="error">{{errorMsg.type.message}}</p>
+          <input type="text" name="newP.type" [(ngModel)]="newP.type" class="form-control">
+          <label for= "newP.description">Description</label>
+          <p *ngIf="errorMsg" class="error">{{errorMsg.description.message}}</p>
+          <input type="text" name="newP.description" [(ngModel)]="newP.description" class="form-control">
+          <p> </p>
+          <p>Skills(optional):</p>
+          <label for= "newP.skill1">Skill 1</label>
+          <input type="text" name="newP.skill1" [(ngModel)]="newP.skill1" class="form-control">
+          <label for= "newP.skill2">Skill 2</label>
+          <input type="text" name="newP.skill2" [(ngModel)]="newP.skill2" class="form-control">
+          <label for= "newP.skill1">Skill 3</label>
+          <input type="text" name="newP.skill3" [(ngModel)]="newP.skill3" class="form-control">
+      </div>
+      <br>
+      <button type="submit" class='btn btn-success'>Add pet</button>
+      <button type="button" class='btn btn-warning' routerLink="['/']">Cancel</button>
+  </form>
+  <!-- <p> {{ newR | json }} </p> -->
+  </div>

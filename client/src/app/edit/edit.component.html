@@ -1,0 +1,30 @@
+<div class ="new">
+  <h3>Edit this pet</h3>
+  <form (submit)="editPet()">
+      <div class="form-group">
+          <label for= "pet.name">Pet Name:</label>
+          <p *ngIf="errorMsg" class="error">{{errorMsg.name.message}}</p>
+          <input type="text" name="pett.name" [(ngModel)]="pet.name" class="form-control">
+          <br>
+          <label for= "pet.type">Pet type:</label>
+          <p *ngIf="errorMsg" class="error">{{errorMsg.type.message}}</p>
+          <input type="text" name="pet.type" [(ngModel)]="pet.type" class="form-control">
+          <p *ngIf="errorMsg" class="error">{{errorMsg.description.message}}</p>
+          <label for= "pet.description">Description</label>
+          <input type="text" name="pet.description" [(ngModel)]="pet.description" class="form-control">
+          <p> </p>
+          <p>Skills(optional):</p>
+          <label for= "pet.skill1">Skill 1</label>
+          <input type="text" name="pet.skill1" [(ngModel)]="pet.skill1" class="form-control">
+          <label for= "pet.skill2">Skill 2</label>
+          <input type="text" name="pet.skill2" [(ngModel)]="pet.skill2" class="form-control">
+          <label for= "pet.skill1">Skill 3</label>
+          <input type="text" name="pet.skill3" [(ngModel)]="pet.skill3" class="form-control">
+      </div>
+      <br>
+      <button type="submit" class='btn btn-success'>Edit</button>
+      
+      <button type="button" class='btn btn-warning' [routerLink]="['/details', pet._id]">Cancel</button>  
+  </form>
+ <!-- <p> {{ pet | json }} </p>  -->
+</div>

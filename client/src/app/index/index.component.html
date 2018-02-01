@@ -1,0 +1,19 @@
+<h3>These pets are looking for a home!</h3>
+<button class='btn btn-success'[routerLink]="['/new']">Add a pet to a shelter </button>
+  <!-- <p class="error" *ngIf="fetchError">{{fetchError}}</p> -->
+  <table class="table table-striped">
+      <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Actions</th> 
+      </tr>
+      <tr *ngFor="let p of pets">
+          <td>{{p.name}}</td>
+          <td>{{p.type}}</td>
+          <td>
+            <button class='btn btn-info' type=button [routerLink]="['/details',p._id]">Details</button>
+            <button class='btn btn-success' type=button [routerLink]="['/edit',p._id]">Edit</button>
+            <!-- <button class='btn btn-warning' type=button (click) ="deleteRestaurant(r._id)">Delete</button> -->
+          </td>
+      </tr>
+  </table>
